@@ -1,28 +1,28 @@
 clearvars
 clc
 
-dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\data\ND2 files\Sigma PEG10 + MAP2';
+dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\data\Tif files\Sigma PEG10 + MAP2';
 
 if ~exist(fullfile(dataDir,'export'), 'dir')
     mkdir(fullfile(dataDir,'export'));
 end
 
-files = dir(fullfile(dataDir, '*.nd2'));
+files = dir(fullfile(dataDir, '*.tif'));
 
 for iF = 1:numel(files)
 
     [~, outputFN] = fileparts(files(iF).name);
+
+    outputFN = outputFN(1:(end - 2));
 
     if exist(fullfile(dataDir, 'export', [outputFN, '_1', '.tif']), ...
             'file')
         continue
     end
          
-    reader = BioformatsImage(fullfile(files(iF).folder, files(iF).name));
+    for iC = 1:3
 
-    for iC = 1:reader.sizeC
-
-        I = getPlane(reader, 1, iC, 1);
+        I = imread(fullfile(dataDir, [outputFN, 'c', int2str(iC), '.tif']));
 
         Iout = reduceImage(I, 4);
 

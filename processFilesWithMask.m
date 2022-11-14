@@ -1,9 +1,9 @@
 clearvars
 clc
 
-dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\data\ND2 files\';
-maskDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-07\masks';
-outputDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-07';
+dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\data\Tif files';
+maskDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-14\masks';
+outputDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-14';
 
 subfolders = {'NC PEG10 + MAP2', 'Rb IgG + Chk IgG', 'Sigma PEG10 + MAP2'};
 

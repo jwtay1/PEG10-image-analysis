@@ -4,8 +4,8 @@
 clearvars
 clc
 
-dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\data\ND2 files';
-outputBaseDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-07\masks';
+dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\data\Tif files';
+outputBaseDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-14\masks';
 
 subfolders = {'NC PEG10 + MAP2', 'Rb IgG + Chk IgG', 'Sigma PEG10 + MAP2'};
 
@@ -19,14 +19,19 @@ for ii = 1:numel(subfolders)
 
     for iFile = 1:numel(files)
 
+        [~, outputFn] = fileparts(files(iFile).name);
+
+        if exist(fullfile(outputBaseDir, subfolders{ii},  ...
+            [outputFn, '.tif']), 'file')
+            continue
+        end
+
         currDAPIimg = imread(fullfile(files(iFile).folder, ...
             files(iFile).name));
 
         currDAPIimg = imgaussfilt(currDAPIimg, 10);
 
         mask = segmentObjects(currDAPIimg, 150);
-
-        [~, outputFn] = fileparts(files(iFile).name);
 
         imwrite(mask, fullfile(outputBaseDir, subfolders{ii},  ...
             [outputFn, '.tif']), 'COmpression', 'none');
