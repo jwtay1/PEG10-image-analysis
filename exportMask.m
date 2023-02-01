@@ -4,14 +4,24 @@
 clearvars
 clc
 
-dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\data\Tif files';
-outputBaseDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-14\masks';
+% dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\data\Tif files';
+% outputBaseDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-14\masks';
 
-subfolders = {'NC PEG10 + MAP2', 'Rb IgG + Chk IgG', 'Sigma PEG10 + MAP2'};
+dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-01-31\TIFs';
+outputBaseDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-01-31\TIFs\masks';
+
+subfolders = dir(dataDir);
+subfolders(1:2) = [];
+
+subfolders(~[subfolders.isdir]) = [];
+
+subfolders = {subfolders.name};
+
+%{'NC PEG10 + MAP2', 'Rb IgG + Chk IgG', 'Sigma PEG10 + MAP2'};
 
 for ii = 1:numel(subfolders)
 
-    files = dir(fullfile(dataDir, subfolders{ii}, 'export', '*_1.tif'));
+    files = dir(fullfile(dataDir, subfolders{ii}, '*_1.tif'));
 
     if ~exist(fullfile(outputBaseDir, subfolders{ii}), 'dir')
         mkdir(fullfile(outputBaseDir, subfolders{ii}));

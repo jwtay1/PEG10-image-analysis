@@ -1,11 +1,23 @@
 clearvars
 clc
 
-dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\data\Tif files';
-maskDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-14\masks';
-outputDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-14';
+% dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\data\Tif files';
+% maskDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-14\masks';
+% outputDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-14';
 
-subfolders = {'NC PEG10 + MAP2', 'Rb IgG + Chk IgG', 'Sigma PEG10 + MAP2'};
+%subfolders = {'NC PEG10 + MAP2', 'Rb IgG + Chk IgG', 'Sigma PEG10 + MAP2'};
+
+dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-01-31\TIFs';
+maskDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-01-31\masks';
+
+outputDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-01-31\processed';
+
+subfolders = dir(dataDir);
+subfolders(1:2) = [];
+
+subfolders(~[subfolders.isdir]) = [];
+
+subfolders = {subfolders.name};
 
 for ii = 1:numel(subfolders)
 
@@ -16,7 +28,7 @@ for ii = 1:numel(subfolders)
     end
     
     %Get list of images
-    imageFiles = dir(fullfile(dataDir, subfolders{ii}, 'export', '*_1.tif'));
+    imageFiles = dir(fullfile(dataDir, subfolders{ii}, '*_1.tif'));
 
     %Create a struct
     storeData = struct('Filename', [], 'GFPIntensity', [], 'TRITCIntensity', []);
