@@ -1,7 +1,7 @@
 clearvars
 clc
 
-dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\data\ND2 files\Sigma PEG10 + MAP2';
+dataDir = 'G:\.shortcut-targets-by-id\1v1eZdGr5J0bg_Z8wJ6IOB8eSkMuvOVyL\last 2 samples';
 
 if ~exist(fullfile(dataDir,'export'), 'dir')
     mkdir(fullfile(dataDir,'export'));

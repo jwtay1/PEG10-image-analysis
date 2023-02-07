@@ -7,10 +7,10 @@ clc
 
 %subfolders = {'NC PEG10 + MAP2', 'Rb IgG + Chk IgG', 'Sigma PEG10 + MAP2'};
 
-dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-01-31\TIFs';
-maskDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-01-31\masks';
+dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-02-06\TIFs';
+maskDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-02-06\masks';
 
-outputDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-01-31\processed';
+outputDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-02-06\processed';
 
 subfolders = dir(dataDir);
 subfolders(1:2) = [];

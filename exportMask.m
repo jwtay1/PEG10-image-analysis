@@ -7,8 +7,8 @@ clc
 % dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\data\Tif files';
 % outputBaseDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-14\masks';
 
-dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-01-31\TIFs';
-outputBaseDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-01-31\TIFs\masks';
+dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-02-06\TIFs';
+outputBaseDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-02-06\TIFs\masks';
 
 subfolders = dir(dataDir);
 subfolders(1:2) = [];
@@ -41,7 +41,8 @@ for ii = 1:numel(subfolders)
 
         currDAPIimg = imgaussfilt(currDAPIimg, 10);
 
-        mask = segmentObjects(currDAPIimg, 150);
+        %mask = segmentObjects(currDAPIimg, 150);
+        mask = segmentObjects(currDAPIimg, 500);
 
         imwrite(mask, fullfile(outputBaseDir, subfolders{ii},  ...
             [outputFn, '.tif']), 'COmpression', 'none');

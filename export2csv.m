@@ -1,13 +1,13 @@
 clearvars
 clc
 
-dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-01-31\processed';
+dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-02-06\processed';
 
 files = dir(fullfile(dataDir, '*.mat'));
 
 fid = fopen(fullfile(dataDir, 'results.csv'), 'w');
 
-fprintf(fid, 'Condition, Filename, GFPIntensity, TRICTIntensity\n');
+fprintf(fid, 'Condition, Filename, Texas Red, Cy5\n');
 
 for iF = 1:numel(files)
 
