@@ -1,14 +1,8 @@
-%This is a workaround for the images which are not segmented correctly dut
-%to mounting issues
-
 clearvars
 clc
 
-% dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\data\Tif files';
-% outputBaseDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2022-11-14\masks';
-
-dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-02-06\TIFs';
-outputBaseDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-02-06\TIFs\masks';
+dataDir = '..\TIFs';
+outputBaseDir = '..\masks';
 
 subfolders = dir(dataDir);
 subfolders(1:2) = [];

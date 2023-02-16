@@ -1,7 +1,7 @@
 clearvars
 clc
 
-dataDir = 'D:\Projects\ALMC Tickets\T17128-Holling\processed\2023-02-06\processed';
+dataDir = '..\processed';
 
 files = dir(fullfile(dataDir, '*.mat'));
 
