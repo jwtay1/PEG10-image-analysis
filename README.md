@@ -1,7 +1,7 @@
 Welcome to the PEG10 Image Analysis project!
 ---
 
-This code is for the upcoming manuscript "UBQLN2 restrains the domesticated 
+This code is for the eLife article  "UBQLN2 restrains the domesticated 
 retrotransposon PEG10 to maintain neuronal health in ALS" by the [Alex 
 Whiteley lab](https://www.colorado.edu/lab/alex-whiteley/).
 
@@ -53,5 +53,5 @@ Whiteley lab](https://www.colorado.edu/lab/alex-whiteley/).
 If you use this code in a publication, please cite our paper:
 
 Black et al. "UBQLN2 restrains the domesticated retrotransposon PEG10 to 
-maintain neuronal health in ALS." bioRxiv 2022.03.25.485837; 
-doi: https://doi.org/10.1101/2022.03.25.485837
+maintain neuronal health in ALS." eLife 79452 (2023).
+doi: https://doi.org/10.7554/eLife.79452.
